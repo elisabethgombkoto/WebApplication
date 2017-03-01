@@ -8,21 +8,22 @@ import java.net.Socket;
  * Created by Elisabeth on 28.02.2017.
  */
 public class ClientSite {
+
     private Socket _socket;
+    //private String _text;
 
+    public ClientSite() {
 
-    private String _host;
-
-    public ClientSite(String host) {
-        _host = host;
     }
 
-    public void tryRequest(String host) {
+    public String tryRequest(String host) {
         PrintWriter s_out = null;
         BufferedReader s_in = null;
+        String text="";
+        StringBuffer stringBuffer= new StringBuffer();
         try {
 
-            _socket = new Socket(get_host(),80);
+            _socket = new Socket(host,80);
             s_out = new PrintWriter(_socket.getOutputStream(),true);
             s_in = new BufferedReader(new InputStreamReader(_socket.getInputStream()));
 
@@ -31,15 +32,26 @@ public class ClientSite {
             //TODO pop up fenster
             e.printStackTrace();
         }
-        String message = "GET " + getFile() + " HTTP/1.1\r\nHost: " + get_urlAdresse() + "\r\n"+ "Connention: close \r\n\r\n";
+        String message = "GET " + getFile(host) + " HTTP/1.1\r\nHost: " + get_urlAdresse(host) + "\r\n"+ "Connention: close \r\n\r\n";
         s_out.println(message);
+
         //Get response from server
         String response;
-
         try {
-            while ((response = s_in.readLine()) != null) {
-                System.out.println(response);
+            boolean print=false;
+        while ((response = s_in.readLine()) != null) {
+            if(print==true){
+                stringBuffer.append(response+"\n");
             }
+            if(response.equals("")){
+                print=true;
+            }
+
+            System.out.println(response);
+        }
+
+        text=stringBuffer.toString();
+
             //close the i/o streams
             s_out.close();
             s_in.close();
@@ -48,10 +60,11 @@ public class ClientSite {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return text;
     }
 
-    public String get_urlAdresse() {
-        char[] url= _host.toCharArray();
+    public String get_urlAdresse( String host) {
+        char[] url= host.toCharArray();
         int i=0;
         StringBuffer sb= new StringBuffer();
 
@@ -63,8 +76,8 @@ public class ClientSite {
     }
 
 
-    private String getFile() {
-        char[] url = _host.toCharArray();
+    private String getFile( String host) {
+        char[] url = host.toCharArray();
         int i = 0;
         StringBuffer sb = new StringBuffer();
 
@@ -79,6 +92,8 @@ public class ClientSite {
         }
         return sb.append('/').toString();
     }
+
+
 /*
 Hallo Elisabeth,
 Ich hab nicht wirklich nützliche links gefunden für die aufgabe in webbaplikationen.
@@ -87,12 +102,11 @@ Hab diesen teil: String message = "GET / HTTP/1.1\r\n\r\n"; umgeändert damits b
 Schaut nun so aus: String message = "GET " + file + " HTTP/1.1\r\nHost: " +domainName +"\r\n";
 Für www.fhv.at/studium/wirtschaft/ ist das file /studium/wirtschaft/ und domainName www.fhv.at
  */
-public String get_host() {
-    return _host;
-}
+
 
     public static void main(String[] args) {
-ClientSite clientSite= new ClientSite("www.fhv.at");
-clientSite.tryRequest(clientSite.get_urlAdresse());
+GuiBrowser guiBrowser=new GuiBrowser();
+
+
     }
 }
