@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * Created by Elisabeth on 01.03.2017.
@@ -34,7 +35,19 @@ public class GuiBrowser extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 ClientSite clientSite=new ClientSite();
                 System.out.println(textField.getText());
-                String text=clientSite.tryRequest(textField.getText());
+                String text= null;
+                try {
+                    text = clientSite.tryRequest(textField.getText());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                    textArea.setText("There was a problem:\n" +
+                            "Errors can occur for the following reasons:\n"+
+                            "\t - if the IP address of the host could not be determined.\n" +
+                            "\t- if an I/O error occurs when creating the socket.\n" +
+                            "\t- if a security manager exists and its checkConnect method doesn't allow the operation.\n" +
+                            "\t- if the port parameter is outside the specified range of valid port values, which is between 0 and 65535, inclusive.\n"+
+                            "Please check your input parameters and your internet connection.\n");
+                }
                 textArea.append(text);
             }
         });
