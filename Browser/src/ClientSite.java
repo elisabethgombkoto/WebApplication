@@ -1,3 +1,4 @@
+import javax.swing.text.BadLocationException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,8 +8,14 @@ import java.net.Socket;
 /**
  * Created by Elisabeth on 28.02.2017.
  *
- * Es können Adressen behandelt sein, wo head leerzeile folgt,
- * wenn diese konvencion nicht erfüllt wird bleibt das Fenster leer
+ * Zum startendiese Cla sse ausführen. Es enthält ein main.
+ *In der eingabe Feld kann die Adresse
+ * mit www
+ * ohne www
+ * aber immer nur ohne http:// erfolgen.
+ *
+ * Es können Adressen behandelt sein, wo head eine leerzeile folgt,
+ * wenn diese konvencion nicht erfüllt wird bleibt das Fenster leer, wird BadFormatExeption geworfen
  *
  */
 public class ClientSite {
@@ -20,7 +27,7 @@ public class ClientSite {
 
     }
 
-    public String tryRequest(String host) throws IOException {
+    public String tryRequest(String host) throws IOException, BadFormatException {
         PrintWriter s_out = null;
         BufferedReader s_in = null;
         String text="";
@@ -49,6 +56,9 @@ public class ClientSite {
             }
 
             System.out.println(response);
+        }
+        if((response=s_in.readLine())==null&&(stringBuffer.toString().equals(null))){
+            throw new BadFormatException();
         }
 
         text=stringBuffer.toString();
@@ -90,5 +100,10 @@ public class ClientSite {
             }
         }
         return sb.append('/').toString();
+    }
+
+
+    public static void main(String[] args) {
+        GuiBrowser guiBrowser=new GuiBrowser();
     }
 }

@@ -47,6 +47,11 @@ public class GuiBrowser extends JFrame {
                             "\t- if a security manager exists and its checkConnect method doesn't allow the operation.\n" +
                             "\t- if the port parameter is outside the specified range of valid port values, which is between 0 and 65535, inclusive.\n"+
                             "Please check your input parameters and your internet connection.\n");
+                }catch (BadFormatException e2){
+                    e2.printStackTrace();
+                    textArea.setText("This website can not be displayed.\n" +
+                            "This website does not contain an empty line after the head.\n"+
+                            " Can not be shown in a coherent manner. Please contact your administrator.");
                 }
                 textArea.append(text);
             }
