@@ -8,7 +8,7 @@ import java.net.Socket;
 /**
  * Created by Elisabeth on 28.02.2017.
  *
- * Zum startendiese Cla sse ausführen. Es enthält ein main.
+ * Zum starten, diese Classe ausführen. Es enthält ein main.
  *In der eingabe Feld kann die Adresse
  * mit www
  * ohne www
