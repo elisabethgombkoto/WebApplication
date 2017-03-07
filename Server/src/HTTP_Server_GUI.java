@@ -70,7 +70,7 @@ public class HTTP_Server_GUI extends JFrame {
             }
         });
         panel.add(btnStatus);
-        contentPane.add(txtDateien, BorderLayout.CENTER);
+
     }
 
 }
