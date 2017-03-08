@@ -61,8 +61,8 @@ public class HTTP_Server_GUI extends JFrame {
                 if( btnStatus.getText().equals( "Connect" ) ){
 
                     HTTPServer.startServer();
-                    btnStatus.setText( "Connect" );
-                } else if ( btnStatus.getText().equals( "Connect" ) ){
+                    btnStatus.setText( "DisConnect" );
+                } else if ( btnStatus.getText().equals( "DisConnect" ) ){
 
                     HTTPServer.stopServer();
                     btnStatus.setText( "Connect" );
@@ -70,7 +70,6 @@ public class HTTP_Server_GUI extends JFrame {
             }
         });
         panel.add(btnStatus);
-
     }
 
 }
