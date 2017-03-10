@@ -1,0 +1,56 @@
+.body{
+    background-color: white;
+}
+
+li a:hover {
+    background-color:white;
+    color: black;
+}
+li a{
+    color:black;
+}
+li a:visited{
+    color:black;
+}
+
+p{
+    font-family: serif;
+    color: black ;
+    font-style: italic;
+    font-weight: bolder;
+    line-height: 1.5; }
+
+ul{
+    list-style: none;
+}
+
+.leftListOnTheSide {
+    width: 300px;
+    height: 800px;
+    float: left;
+    background-color: lightgray;
+
+    list-style: none;
+    align-content: center;
+
+    font-style: italic;
+    line-height: 3.5;
+    font-size: 25px;
+}
+
+.inhalt {
+    background-color: white;
+}
+
+
+/* Reset Grundlayout.css bezüglich div-Elementen */
+
+div {
+    height: auto;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+
