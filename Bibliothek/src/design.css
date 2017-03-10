@@ -1,21 +1,5 @@
-
-
-#left-list{
-    float: left;
-    position:absolute;
-    width: 200px;
-    height: 400px;
-    left: 0px;
-    list-style-type: none;
-    background-color:aquamarine;
-
-
-    display: block;
-    color: #000;
-    text-decoration: none;
-    text-align: left;
-    line-height: 3.5;
-    font-size: 25px;
+.body{
+    background-color: darkgoldenrod;
 }
 
 li a:hover {
@@ -28,42 +12,38 @@ li a{
 li a:visited{
     color:blueviolet;
 }
-#information{
-    font-style: italic;
 
-    border:3px red;
-    align-content: center;
-    background-color: goldenrod;
-    font-style: italic;
-}
 p{
     font-family: serif;
-    color: black ;
+    color: darkred ;
     font-style: italic;
     font-weight: bolder;
     line-height: 1.5; }
 
-#information,
-#zusammenfassung {
-    width: 100px;
-    height: 200px;
+ul{
+    list-style: none;
 }
 
-#information {
+.leftListOnTheSide {
+    width: 300px;
+    height: 800px;
     float: left;
-    border: 3px dashed blue;
+    background-color: aquamarine;
+
+    list-style: none;
+    align-content: center;
+
+    font-style: italic;
+    line-height: 3.5;
+    font-size: 25px;
 }
 
-#inhalt {
-    border: 3px solid green;
-    background-color: lightgreen;
+.inhalt {
+    border: 3px solid darkgoldenrod;
+    background-color: darkgoldenrod;
 }
 
-#zusammenfassung {
-    float: right;
-    border: 3px solid orange;
-    margin: 15px;
-}
+
 /* Reset Grundlayout.css bezüglich div-Elementen */
 
 div {

@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <title> Medientypenseiten</title>
     <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="print.css">
     <link rel="stylesheet" href="font-awesome.min.css">
 </head>
-<body>
-<div class="left-list">
-    <li><i class="fa fa-home" aria-hidden="true"></i><a href="http://localhost:63342/WebApplication/Bibliothek/Bibliothek.html?_ijt=2g918fgjd27f86reoiop7123ej">Home</a></li>
-    <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:ego8769@students.fhv.at">Haben Sie Fragen?Wir antworten!</a></li>
-    <li><i class="fa fa-th-list" aria-hidden="true"></i><a href="http://localhost:63342/WebApplication/Bibliothek/Medientypenseiten.html?_ijt=n71gudb2qgjc8p95bs99hllbrb">Medientypen</a> </li>
+<body class="body">
+
+<div class="leftListOnTheSide">
+    <ul>
+        <li><i class="fa fa-home" aria-hidden="true"></i>
+            <a href="http://localhost:63342/WebApplication/Bibliothek/Bibliothek.html?_ijt=2g918fgjd27f86reoiop7123ej">Home</a>
+        </li>
+        <li>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <a href="mailto:ego8769@students.fhv.at">Email</a>
+        </li>
+        <li>
+            <i class="fa fa-th-list" aria-hidden="true"></i>
+            <a href="http://localhost:63342/WebApplication/Bibliothek/Medientypenseiten.html?_ijt=n71gudb2qgjc8p95bs99hllbrb">Medientypen</a>
+
+            <ul>
+                <li>
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                   <a href="http://localhost:63342/WebApplication/Bibliothek/B%C3%BCcher.html?_ijt=52lqb10hvqqkuuf89qgko2bh9t">Books</a>
+                </li>
+                <li>
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <a href="http://localhost:63342/WebApplication/Bibliothek/Spiele.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Games</a>
+                </li>
+                <li>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    <a href="http://localhost:63342/WebApplication/Bibliothek/DVD.html?_ijt=is4nibr7jbg9f3c2mr8skimsj2">DVD</a>
+                </li>
+                <li>
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                    <a href="http://localhost:63342/WebApplication/Bibliothek/Zeitschriften.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Jornals</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>
-<h2>
-Medientypen
-</h2>
+
+<div class="inhalt">
+
+    <h1>Medientypen</h1>
 
 <table border="2" width="60%" align=right>
     <tr>
@@ -24,13 +56,13 @@ Medientypen
         <td width="20%">Ausleihfrist</td>
     </tr>
     <tr>
-        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/B%C3%BCcher.html?_ijt=1sn5ahklctpdq9nm86pah87lfh">Bücher</a></td>
+        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/B%C3%BCcher.html?_ijt=1sn5ahklctpdq9nm86pah87lfh">Books</a></td>
         <td>Széchényi Raum</td>
         <td>AAA000-ZZZ999</td>
         <td>20Tage</td>
     </tr>
     <tr>
-        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/Spiele.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Spiele</a></td>
+        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/Spiele.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Games</a></td>
         <td>Kossuth Raum</td>
         <td>NM000-NM999</td>
         <td>14Tage</td>
@@ -42,7 +74,7 @@ Medientypen
         <td>14Tage</td>
     </tr>
     <tr>
-        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/Zeitschriften.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Zeitschriften</a></td>
+        <td width="25%"><a href="http://localhost:63342/WebApplication/Bibliothek/Zeitschriften.html?_ijt=qbkuin6ec32i00h0pa3f10ka5s">Jornals</a></td>
         <td>Kossuth Raum</td>
         <td>AA1960/01-AA2020/12</td>
         <td>20Tage</td>
@@ -50,7 +82,7 @@ Medientypen
 
 </table>
 <strong>Auf den Medientypenseiten soll zunächst der Medientyp und der Raum mit Regal, in dem er zu finden ist, angegeben werden. <br>
-    Anschließend erscheint eine Angabe über die Ausleihfrist für die Exemplare des betreffenden Medientyps. </br>
+    Anschließend erscheint eine Angabe über die Ausleihfrist für die Exemplare des betreffenden Medientyps. <br>
     Danach folgt eine Tabelle, in der die vorhandenen Exemplare, die in der Bibliothek zu diesem Medientyp vorhanden sind, aufgelistet werden;</br>
     in den Zeilen stehen jeweils die Exemplare, während in den Spalten die vom Medientyp abhängigen Eigenschaften der Exemplare </br>
     (z.B. Index, Autor, Titel, verliehen bis) angezeigt werden.<br>
@@ -59,5 +91,6 @@ Medientypen
     Geben Sie für diese erste Phase, im Sinne eines Layout-Prototypen, exemplarisch einige Einträge für
  die statischen Ausgaben vor. <br>
     Es sind wenigstens zwei Medientypenseiten (z.B. für Bücher und DVDs) auszuarbeiten. </strong>
+</div>
 </body>
 </html>
