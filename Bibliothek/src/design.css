@@ -42,7 +42,10 @@ ul{
     border: 3px solid darkgoldenrod;
     background-color: darkgoldenrod;
 }
-
+img{
+    width: 300px;
+    height: auto;
+}
 
 /* Reset Grundlayout.css bezüglich div-Elementen */
 
