@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Formular</title>
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="print.css" media="print">
     <link rel="stylesheet" href="font-awesome.min.css">
     <script type="text/javascript" src="form.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="description" content="Bibliothek Würenlingen">
+    <meta name="keywords" content="Würenlingen, Bibliothek, Dorfbibliothek, Jahresabonnement, Mahnung, Buch, Bücher, DVD, Spiele">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body class="body">
 <div class="leftListOnTheSide">
     <div class="no-print">
@@ -37,7 +40,7 @@
 
     <h1>Formular</h1>
 
-        <form ACTION="form.js" onSubmit="return validateForm()">
+        <form ACTION="mailto:ego8769@students.fhv.at" onSubmit="return validateForm()" method="post" enctype="text/plain">
             <p>
                 <label for="firstname">Vorname:</label>
                 <input TYPE="TEXT" id="firstname">
@@ -57,7 +60,7 @@
             <p>
                 <label for="country">Statt</label>
                 <select id="country">
-                    <option>Bitte wählen Sie einen Stadt</option>
+                    <option>Bitte wählen Sie einen Stadt aus</option>
                     <option>Ungarn</option>
                     <option>Austria</option>
                     <option>Deutschland</option>
@@ -79,10 +82,24 @@
             </p>
             <p>
                 <label for="male">männlich</label>
-                <INPUT TYPE="RADIO" id="male" VALUE="m">
+                <INPUT TYPE="RADIO" name="gender" id="male" VALUE="m">
 
                 <label for="femail">weiblich</label>
-                <INPUT TYPE="RADIO" id="femail" VALUE="w">
+                <INPUT TYPE="RADIO" name="gender" id="femail" VALUE="w">
+            </p>
+            <p>
+                <label for="over20">Jahresabonnement für Erwachsene (exkl. E-Medien)</label>
+                <input type="checkbox" name="over20" id="over20" value="over20"  >
+
+                <label for="over20plusDVD">Jahresabonnement für Erwachsene(inkl. E-Medien)</label>
+                <input type="checkbox" name="over20plusDVD" id="over20plusDVD" value="over20plusDVD"  >
+                <br>
+
+                <label for="under20">Jahresabonnement für Kinder und Jugendliche unter 20 Jahren (exkl. E-Medien)</label>
+                <input type="checkbox" id="under20" value="under20"  >
+
+                <label for="under20plusDVD">Jahresabonnement für Kinder und Jugendliche unter 20 Jahren(inkl. E-Medien)</label>
+                <input type="checkbox" id="under20plusDVD" value="under20plusDVD"  >
             </p>
 
             <p>
@@ -90,44 +107,6 @@
                 <input type="reset" value="Formular löschen">
             </p>
         </form>
-
-
-    <p>
-        Erweitern Sie Ihre Bibliotheksverwaltungs-Web-Site um eine Seite zum Beantragen einer User-ID und eines Passworts.
-        Dies soll mit Hilfe eines Formulars erfolgen. Folgende Formularelemente sollen eingesetzt werden: • •
-    </p>
-       <ul>
-    <li>Einzeiliges Textfeld für gewünschte User-ID </li>
-    <li>Checkbox für verschiedene Nutzerkategorien: minderjähriger Kunde, volljähriger Kunde, Mitarbeiter, Admin </li>
-    <li></li>
-    <li>Passwortfeld für Passwort</li>
-    <li>Passwortfeld für Bestätigung des Passworts</li>
-    <li> Radiobutton für Geschlecht (weiblich/männlich)</li>
-    </ul>
-   <p> Einzeiliges Textfeld für E-Mail Erstellen Sie Plausibilitätsprüfungen für das User-ID-Antragsformular, geschrieben in JavaScript. So soll geprüft werden, objedes Feld ausgefüllt ist</p>
-    <ul>
-    <li>in jeder Gruppe von Radio-Buttons bzw. Check-Boxes eine Auswahl getroffen wurde</li>
-    <li>die User-ID gültig ist (muss zwischen 5 und 12 Zeichen lang sein und darf nur Buchstaben und “_“, keine Leer- oder Sonderzeichen und keine Ziffern enthalten)</li>
-    <li>das Passwort gültig ist (muss zwischen 6 und 11 Zeichen lang sein und mit einem Buchstaben anfangen und darf nur Buchstaben,
-        Ziffern und “_“, keine Leer- oder Sonderzeichen enthalten)</li>
-    <li>Passwort und dessen Bestätigung übereinstimmen </li>
-    <li>die E-Mail-Adresse syntaktisch korrekt aufgebaut ist: Der Namensteil einer gültigen E-Mail-Adresse soll nur mit einem Buchstaben beginnen dürfen.
-        Danach darf eine beliebige Folge von Buchstaben, Zahlen, “_“ und “-“ auftreten. Ein “.“ darf immer nur einzeln (nicht gefolgt von anderen “.“) und nicht am Anfang oder Ende des Namensteils erscheinen.
-        Nach dem Namensteil folgt ein “@“ und danach der Domain-Name, deren Aufbau den bekannten Kriterien genügen muss.
-        Die Verwendung des HTML5 "email"Attributs für das -Element ist nicht zulässig.</li>
-</ul>
-    <p>
-    Setzen Sie für die Prüfung der Felder, deren Inhalt einer bestimmten Syntax genügen muss,
-        Regular Expressions ein.
-    Bei nicht bestandener Plausibilitätsprüfung soll eine entsprechende Fehlermeldung in einem Pop-Up Fenster erscheinen und das Browserfenster wieder das Formular
-    in seinem Zustand vor dem Drücken des Submit-Buttons anzeigen. Der Fokus soll auf dem Formular-Element liegen, das (als erstes) als fehlerhaft identifiziert wurde.
-    Nur ein Formular, das die Plausibilitätsprüfungen bestanden hat, darf versandt werden.
-    Der Aufruf dieser Formularseite soll von der Startseite aus über einen entsprechenden Link erfolgen.
-    Die Formular-Einträge sollen nach Betätigen des Submit-Buttons zunächst per EMail an Sie geschickt werden.
-    Außerdem soll ein Reset-Button vorhanden sein, der die ausgefüllten Formularelemente wieder löscht.
-    Die Aufgabe wird in den folgenden Übungsblättern fortgesetzt.
-
-    </p>
 </div>
 </body>
 </html>
